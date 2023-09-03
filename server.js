@@ -102,17 +102,17 @@ io.on("connection", (socket) => {
                     const element = rooms[key];
                     var users = element.users;
                     users = users.filter((user) => user.username != socket.id);
-                    await Room.updateOne(
-                        {
-                            _id: element._id
-                        },
-                        {
-                            $set: {
-                                users: users,
-                                userCount: users.length
-                            }
-                        }
-                    );
+                    // await Room.updateOne(
+                    //     {
+                    //         _id: element._id
+                    //     },
+                    //     {
+                    //         $set: {
+                    //             users: users,
+                    //             userCount: users.length
+                    //         }
+                    //     }
+                    // );
                 }
             }
         }
